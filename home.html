@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+div{
+    width: 50%;
+    background-image: url();
+}
+
+#search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#search-bar:focus {
+    border-color: #ff6600;
+    box-shadow: 0 4px 10px rgba(255,102,0,0.3);
+}
+</style>
 </head>
 <body>
-    <h1>Page Content</h1>
-    <p>This is your main content area.</p>
+    <div id="search-container">
+        <input type="text" placeholder="Searching for a specific recipe ?" id="search-bar">
+    </div>
 </body>
 </html>

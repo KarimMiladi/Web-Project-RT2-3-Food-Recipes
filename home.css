@@ -1,0 +1,16 @@
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-bar {
+    width: 60%;             /* make it bigger horizontally */
+    max-width: 600px;       /* optional max width */
+    padding: 15px 20px;     /* bigger height */
+    font-size: 1.2rem;      /* bigger text */
+    border: 2px solid #ccc; /* border color */
+    border-radius: 10px;    /* rounded corners */
+    outline: none;          /* remove default focus outline */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* optional shadow */
+}

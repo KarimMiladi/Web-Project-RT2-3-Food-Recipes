@@ -1,3 +1,4 @@
+/* ===== General ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -31,17 +32,18 @@ body {
 /* ===== Sidebar ===== */
 .sidenav {
     position: fixed;
-    top: 60px;
+    top: 60px; /* below navbar */
     left: 0;
     width: 200px;
-    height: 100%;
+    height: calc(100vh - 60px); /* full height minus navbar */
     background: #444;
     transition: 0.3s;
+    overflow: auto;
 }
 
 /* Collapsed sidebar */
 .sidenav.collapsed {
-    width:55px;
+    width: 55px;
 }
 
 /* Sidebar links */
@@ -75,12 +77,22 @@ body {
 
 /* ===== Content ===== */
 .content {
-    margin-top: 60px;
-    margin-left: 200px;
-    padding: 20px;
+    position: absolute;
+    top: 60px; /* below navbar */
+    left: 200px; /* next to sidebar */
+    width: calc(100% - 200px);
+    height: calc(100vh - 60px);
     transition: 0.3s;
 }
 
 .content.expanded {
-    margin-left: 70px;
+    left: 55px; /* when sidebar is collapsed */
+    width: calc(100% - 55px);
+}
+
+/* ===== iframe ===== */
+.content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
