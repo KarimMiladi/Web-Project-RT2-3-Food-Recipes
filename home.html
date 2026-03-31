@@ -5,50 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
-
-div{
-    width: 50%;
-    background-image: url();
-}
-
 #search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 500px;
     width: 100%;
-    background-image: url("");
+    background-image: url("images/background_food.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 #search-bar {
-    width: 100%;
-    max-width: 600px;
-    padding: 15px 20px;
-    font-size: 1.2rem;
+    width: 70%;
+    max-width: 700px;
+    padding: 20px 25px;
+    font-size: 1.5rem;
     border: 2px solid #ccc;
-    border-radius: 10px;
+    border-radius: 12px;
     outline: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
-
 #search-bar:focus {
     border-color: #ff6600;
     box-shadow: 0 4px 10px rgba(255,102,0,0.3);
+}
+
+/* Make page container a flex row */
+#page-container {
+    display: flex;   /* aligns children in a row */
+    height: 100vh;   /* full viewport height */
+}
+
+/* Filter sidebar */
+#filter {
+    width: 200px;             /* fixed width */
+    background-color: #eee;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Main content */
+#main-content {
+    flex: 1;                  /* take remaining space */
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
 }
 </style>
 </head>
 <body>
     <div id="search-container">
         <input type="text" placeholder="Searching for a specific recipe ?" id="search-bar">
+    </div>
+    <div id="page-container">
+        <div id="filter">
+            <h2>Filter By:</h2>
+            <h3>Meal Type:</h3>
+            <input type="checkbox" value="breakfast" id="bf">
+            <label for="bf">Breakfast</label><br>
+            <input type="checkbox" value="lunch" id="lun">
+            <label for="lun">Lunch</label><br>
+            <input type="checkbox" value="snack" id="snk">
+            <label for="snk">Snack</label><br>
+            <input type="checkbox" value="dinner" id="din">
+            <label for="din">Dinner</label><br>
+            <h3>Cuisine:</h3>
+            <input type="checkbox" value="italian" id="ita">
+            <label for="ita">Italian</label><br>
+            <input type="checkbox" value="tunisian" id="tun">
+            <label for="tun">Tunisian</label><br>
+            <input type="checkbox" value="mexican" id="mex">
+            <label for="mex">Mexican</label><br>
+            <input type="checkbox" value="asian" id="asi">
+            <label for="asi">Asian</label><br>
+            <h3>Difficulty Level:</h3>
+            <input type="checkbox" value="easy" id="eas">
+            <label for="eas">Easy</label><br>
+            <input type="checkbox" value="medium" id="med">
+            <label for="med">Medium</label><br>
+            <input type="checkbox" value="hard" id="har">
+            <label for="har">Hard</label><br>
+        </div>
+        <div id="main-content">
+            <p>sds</p>
+        </div>
     </div>
 </body>
 </html>
