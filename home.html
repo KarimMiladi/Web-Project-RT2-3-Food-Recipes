@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
+@font-face {
+    font-family: 'KitchenFont';
+    src: url(fonts/home-kitchen-script-font/HomeKitchenScript-GOWKq.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format('truetype');
+}
 body{
+    font-family: 'Montserrat';
     margin: 0;
     width: 100%;
     height: 100%;
+}
+h2,h3,p{
+    font-family: 'Playfair Display';
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 24px;
+}
+label{
+    font-size: 16px;
 }
 #search-container {
     display: flex;
@@ -34,105 +59,86 @@ body{
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 #search-bar:focus {
-    border-color: #ff6600;
-    box-shadow: 0 4px 10px rgba(255,102,0,0.3);
+    border-color: #C4661F;
+    box-shadow: 0 4px 10px #783D19;
 }
 
-/* Make page container a flex row */
+input::placeholder  {
+    font-family: 'Playfair Display';
+    font-size: 24px;
+}
+
 #page-container {
-    display: flex;   /* aligns children in a row */
-    height: 100%;   /* full viewport height */
+    display: flex;
+    height: 100%;
 }
 
-/* Filter sidebar */
 #filter {
-    width: 200px;             /* fixed width */
-    background-color: #eee;
+    width: 200px;
+    background-color: #F9EBC7;
     padding: 20px;
     box-sizing: border-box;
 }
 
-/* Main content */
 #main-content {
-    flex: 1;                  /* take remaining space */
-    background-color: #eee;
+    flex: 1;
+    background-color: #FEFAE0;
     padding: 20px;
     box-sizing: border-box;
 }
 
-/* GRID (matrix layout) */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
-/* Each card */
 .card {
-    background: white;
+    background: #A9B388;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px #5f6f52;
     transition: 0.2s;
 }
 
-/* Hover effect */
 .card:hover {
     transform: scale(1.05);
 }
 
-/* Image */
 .card img {
     width: 100%;
     height: 150px;
-    object-fit: cover; /* keeps image nice */
+    object-fit: cover;
 }
 
-/* Text */
 .card p {
     padding: 10px;
     font-weight: bold;
 }
 
-/* Title */
 .card .title {
     font-weight: bold;
     margin: 10px 0 5px;
 }
 
-/* Tags container */
 .tags {
     display: flex;
     justify-content: center;
     gap: 8px;
-    flex-wrap: wrap; /* allows tags to go to next line */
+    flex-wrap: wrap;
     padding-bottom: 10px;
 }
 
-/* Each tag */
 .tags span {
-    background-color: #eee;
+    background-color: #F9EBC7;
     padding: 5px 10px;
-    border-radius: 20px; /* makes it pill-shaped */
+    border-radius: 20px;
     font-size: 0.8rem;
 }
 
-/* Optional: different colors */
-.tags span:nth-child(1) {
-    background-color: #cdffe9;
-}
-
-.tags span:nth-child(2) {
-    background-color: #e1bee7;
-}
-
-.tags span:nth-child(3) {
-    background-color: #bbdefb;
-}
-
 footer{
-    background-color: #a88766;
+    background-color: #B99470;
     padding: 20px;
     text-align: center;
 }
@@ -150,8 +156,8 @@ footer{
             <label for="bf">Breakfast</label><br>
             <input type="checkbox" value="lunch" id="lun">
             <label for="lun">Lunch</label><br>
-            <input type="checkbox" value="snack" id="snk">
-            <label for="snk">Snack</label><br>
+            <input type="checkbox" value="dessert" id="dst">
+            <label for="dst">Dessert</label><br>
             <input type="checkbox" value="dinner" id="din">
             <label for="din">Dinner</label><br>
             <h3>Cuisine:</h3>
@@ -179,36 +185,111 @@ footer{
                     <div class="tags">
                         <span>Italian</span>
                         <span>Lunch</span>
+                        <span>Medium</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/brik.jpg" alt="">
+                    <p>Brik</p>
+                    <div class="tags">
+                        <span>Tunisian</span>
+                        <span>Dinner</span>
                         <span>Easy</span>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/pizza.jpg" alt="">
-                    <p>Pizza</p>
+                    <img src="images/tacos.jpg" alt="">
+                    <p>Tacos</p>
+                    <div class="tags">
+                        <span>Mexican</span>
+                        <span>Lunch</span>
+                        <span>Medium</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images/pizza.jpg" alt="">
-                    <p>Pizza</p>
+                    <img src="images/shakshouka.jpg" alt="">
+                    <p>Shakshouka</p>
+                    <div class="tags">
+                        <span>Tunisian</span>
+                        <span>Dinner</span>
+                        <span>Easy</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images/pizza.jpg" alt="">
-                    <p>Pizza</p>
+                    <img src="images/chicken_curry.jpg" alt="">
+                    <p>Chicken Curry</p>
+                    <div class="tags">
+                        <span>Indian</span>
+                        <span>Dinner</span>
+                        <span>Medium</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images/pizza.jpg" alt="">
-                    <p>Pizza</p>
+                    <img src="images/sushi.jpg" alt="">
+                    <p>Sushi</p>
+                    <div class="tags">
+                        <span>Japanese</span>
+                        <span>Dinner</span>
+                        <span>Medium</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images/pizza.jpg" alt="">
-                    <p>Pizza</p>
+                    <img src="images/paella.jpg" alt="">
+                    <p>Paella</p>
+                    <div class="tags">
+                        <span>Spanish</span>
+                        <span>Dinner</span>
+                        <span>Hard</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <img src="images/pizza.jpg" alt="">
-                    <p>Pizza</p>
+                    <img src="images/dumplings.jpg" alt="">
+                    <p>Dumplings</p>
+                    <div class="tags">
+                        <span>Chinese</span>
+                        <span>Dinner</span>
+                        <span>Hard</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/beef_wellington.jpg" alt="">
+                    <p>Beef Wellington</p>
+                    <div class="tags">
+                        <span>British</span>
+                        <span>Dinner</span>
+                        <span>Hard</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/creme_brulée.jpg" alt="">
+                    <p>Creme Brulée</p>
+                    <div class="tags">
+                        <span>French</span>
+                        <span>Dessert</span>
+                        <span>Medium</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/baklawa.jpg" alt="">
+                    <p>Baklawa</p>
+                    <div class="tags">
+                        <span>Turkish</span>
+                        <span>Dessert</span>
+                        <span>Hard</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/yoyo.jpg" alt="">
+                    <p>Yoyo</p>
+                    <div class="tags">
+                        <span>Tunisian</span>
+                        <span>Dessert</span>
+                        <span>Easy</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer>[Web Project RT2 INSAT 2025-2026]</footer>
+    <footer>[ Web Project RT2 INSAT 2025-2026 ]</footer>
 </body>
 </html>
