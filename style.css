@@ -1,96 +1,103 @@
-/* ===== General ===== */
+@font-face {
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: 'Playfair Display', sans-serif;
 }
 
-/* ===== Top Horizontal Navbar ===== */
+
 .topnav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    background-color: #333;
+    background-color: #A9B388;
     display: flex;
     align-items: center;
     padding-left: 20px;
-    z-index: 1000;
 }
 
 .topnav a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin-right: 20px;
     font-size: 18px;
 }
 
 .topnav a:hover {
-    color: #00bcd4;
+    color: #5F6F52;
 }
 
-/* ===== Sidebar ===== */
+
 .sidenav {
     position: fixed;
-    top: 60px; /* below navbar */
+    top: 60px;
     left: 0;
     width: 200px;
-    height: calc(100vh - 60px); /* full height minus navbar */
-    background: #444;
+    height: calc(100% - 60px);
+    background: #A9B388;
     transition: 0.3s;
     overflow: auto;
 }
 
-/* Collapsed sidebar */
+
 .sidenav.collapsed {
     width: 55px;
 }
 
-/* Sidebar links */
+
 .sidenav a {
     display: flex;
     align-items: center;
-    color: white;
+    color: black;
     padding: 15px;
     text-decoration: none;
     gap: 15px;
 }
 
 .sidenav a:hover {
-    background: #666;
+    background: #5F6F52;
 }
 
-/* Hide text when collapsed */
+
 .sidenav.collapsed .text {
     display: none;
 }
 
-/* Toggle button */
+
 .toggle-btn {
     width: 100%;
     padding: 15px;
-    background: #222;
+    background: #5F6F52;
     border: none;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
-/* ===== Content ===== */
+
 .content {
     position: absolute;
-    top: 60px; /* below navbar */
-    left: 200px; /* next to sidebar */
+    top: 60px;
+    left: 200px;
     width: calc(100% - 200px);
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     transition: 0.3s;
 }
 
 .content.expanded {
-    left: 55px; /* when sidebar is collapsed */
+    left: 55px;
     width: calc(100% - 55px);
 }
 
-/* ===== iframe ===== */
+
 .content iframe {
     width: 100%;
     height: 100%;
