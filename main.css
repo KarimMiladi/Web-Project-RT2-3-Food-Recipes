@@ -6,6 +6,10 @@
     font-family: 'Playfair Display';
     src: url(fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: 'Home Kitchen';
+    src: url(fonts/home-kitchen-script-font/HomeKitchenScript-GOWKq.ttf);
+}
 body {
     margin: 0;
     padding: 0;
@@ -22,14 +26,15 @@ body {
     background-color: #A9B388;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 .topnav a {
+    font-family: "Home Kitchen", sans-serif;
     color: black;
     text-decoration: none;
-    margin-right: 20px;
-    font-size: 18px;
+    margin-right: 30px;
+    font-size: 32px;
 }
 
 .topnav a:hover {
@@ -55,6 +60,8 @@ body {
 
 
 .sidenav a {
+    font-family: "Home Kitchen", sans-serif;
+    font-size: 32px;
     display: flex;
     align-items: center;
     color: black;

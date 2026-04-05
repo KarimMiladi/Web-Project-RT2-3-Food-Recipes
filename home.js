@@ -11,7 +11,24 @@ function filterCards(){
             return;
         }
         const tags = Array.from(card.querySelectorAll('.tags span')).map(span => span.textContent.toLowerCase());
-        const match = checked.some(filter => tags.includes(filter));
+        const match = checked.every(filter => tags.includes(filter));
         card.style.display = match ?  'block' : 'none';
     });
 }
+
+const searchbar = document.getElementById("search-bar");
+searchbar.addEventListener("input", () => {
+    const value = searchbar.value.toLowerCase();
+    cards.forEach(card => {
+        const title = card.querySelector("p").textContent.toLowerCase()
+        title.includes(value) ? card.style.display = "block" : card.style.display = "none";
+    })
+});
+
+
+const hearts = document.querySelectorAll(".heart");
+hearts.forEach(heart => {
+    heart.addEventListener("click", () => {
+        heart.classList.toggle("red");
+    })
+})
